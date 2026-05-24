@@ -4,6 +4,42 @@ A local extension for VS Code and compatible forked editors that adds syntax hig
 
 ## Installation (local, no marketplace required)
 
+### macOS / Linux install command
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.sh | sh
+```
+
+Install to a specific supported editor:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.sh | sh -s -- cursor
+curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.sh | sh -s -- windsurf
+curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.sh | sh -s -- antigravity
+```
+
+The default target is VS Code.
+
+### Windows install command
+
+In PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.ps1 | iex
+```
+
+Install to a specific supported editor:
+
+```powershell
+$env:FUSION_SETTING_EDITOR="cursor"; irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.ps1 | iex
+$env:FUSION_SETTING_EDITOR="windsurf"; irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.ps1 | iex
+$env:FUSION_SETTING_EDITOR="antigravity"; irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.ps1 | iex
+```
+
+Available targets are `vscode`, `cursor`, `windsurf`, and `antigravity`. The default target is VS Code.
+
+### Manual install paths
+
 Clone or copy this folder into your editor's local extensions directory:
 
 <details open>
