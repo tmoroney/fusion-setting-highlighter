@@ -31,7 +31,7 @@ $Ref = if ($env:FUSION_SETTING_REF) {
     "master"
 }
 
-$ExtensionDirName = "fusion-setting"
+$ExtensionDirName = "fusion-setting-highlighter"
 
 if (@("vscode", "cursor", "windsurf", "antigravity") -notcontains $Editor) {
     throw "Unknown editor: $Editor. Use vscode, cursor, windsurf, or antigravity."
@@ -67,7 +67,7 @@ try {
     }
     Copy-Item -Path (Join-Path $SourceDir.FullName "syntaxes") -Destination $SyntaxesDir -Recurse -Force
 
-    Write-Host "Installed Fusion Setting to $InstallDir"
+    Write-Host "Installed Fusion Setting Highlighter to $InstallDir"
     Write-Host "Restart your editor, then open a .setting file."
 } finally {
     if (Test-Path $TempDir) {

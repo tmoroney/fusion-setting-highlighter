@@ -1,6 +1,6 @@
 {
-  "name": "fusion-setting",
-  "displayName": "Fusion Setting",
+  "name": "fusion-setting-highlighter",
+  "displayName": "Fusion Setting Highlighter",
   "description": "Syntax highlighting for DaVinci Resolve Fusion .setting files with embedded Lua support",
   "version": "0.0.1",
   "publisher": "local",

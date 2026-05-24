@@ -3,7 +3,7 @@ set -eu
 
 REPO_URL="${FUSION_SETTING_REPO_URL:-https://github.com/tmoroney/fusion-setting-highlighter}"
 REF="${FUSION_SETTING_REF:-master}"
-EXTENSION_DIR_NAME="fusion-setting"
+EXTENSION_DIR_NAME="fusion-setting-highlighter"
 
 prompt_for_editor() {
   echo "Choose an editor:"
@@ -71,5 +71,5 @@ cp "$source_dir/language-configuration.json" "$install_dir/language-configuratio
 rm -rf "$install_dir/syntaxes"
 cp -R "$source_dir/syntaxes" "$install_dir/syntaxes"
 
-echo "Installed Fusion Setting to $install_dir"
+echo "Installed Fusion Setting Highlighter to $install_dir"
 echo "Restart your editor, then open a .setting file."

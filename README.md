@@ -31,20 +31,20 @@ Clone or copy this folder into your editor's local extensions directory:
 <details>
 <summary>macOS / Linux</summary>
 
-- **VS Code:** `~/.vscode/extensions/fusion-setting/`
-- **Cursor:** `~/.cursor/extensions/fusion-setting/`
-- **Windsurf:** `~/.windsurf/extensions/fusion-setting/`
-- **Antigravity:** `~/.antigravity/extensions/fusion-setting/`
+- **VS Code:** `~/.vscode/extensions/fusion-setting-highlighter/`
+- **Cursor:** `~/.cursor/extensions/fusion-setting-highlighter/`
+- **Windsurf:** `~/.windsurf/extensions/fusion-setting-highlighter/`
+- **Antigravity:** `~/.antigravity/extensions/fusion-setting-highlighter/`
 
 </details>
 
 <details>
 <summary>Windows</summary>
 
-- **VS Code:** `%USERPROFILE%\.vscode\extensions\fusion-setting\`
-- **Cursor:** `%USERPROFILE%\.cursor\extensions\fusion-setting\`
-- **Windsurf:** `%USERPROFILE%\.windsurf\extensions\fusion-setting\`
-- **Antigravity:** `%APPDATA%\Antigravity\extensions\fusion-setting\`
+- **VS Code:** `%USERPROFILE%\.vscode\extensions\fusion-setting-highlighter\`
+- **Cursor:** `%USERPROFILE%\.cursor\extensions\fusion-setting-highlighter\`
+- **Windsurf:** `%USERPROFILE%\.windsurf\extensions\fusion-setting-highlighter\`
+- **Antigravity:** `%APPDATA%\Antigravity\extensions\fusion-setting-highlighter\`
 
 </details>
 
