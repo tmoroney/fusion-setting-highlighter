@@ -2,7 +2,7 @@
 set -eu
 
 REPO_URL="${FUSION_SETTING_REPO_URL:-https://github.com/tmoroney/fusion-setting-highlighter}"
-REF="${FUSION_SETTING_REF:-main}"
+REF="${FUSION_SETTING_REF:-master}"
 EXTENSION_DIR_NAME="fusion-setting"
 
 prompt_for_editor() {

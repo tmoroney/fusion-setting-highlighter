@@ -9,7 +9,7 @@ A local extension for VS Code and compatible forked editors that adds syntax hig
 Run the installer and choose your editor from the prompt:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/master/scripts/install.sh | sh
 ```
 
 Available targets are VS Code, Cursor, Windsurf, and Antigravity.
@@ -19,7 +19,7 @@ Available targets are VS Code, Cursor, Windsurf, and Antigravity.
 In PowerShell, run the installer and choose your editor from the prompt:
 
 ```powershell
-irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/tmoroney/fusion-setting-highlighter/master/scripts/install.ps1 | iex
 ```
 
 Available targets are VS Code, Cursor, Windsurf, and Antigravity.

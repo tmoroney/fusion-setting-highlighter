@@ -28,7 +28,7 @@ $RepoUrl = if ($env:FUSION_SETTING_REPO_URL) {
 $Ref = if ($env:FUSION_SETTING_REF) {
     $env:FUSION_SETTING_REF
 } else {
-    "main"
+    "master"
 }
 
 $ExtensionDirName = "fusion-setting"
