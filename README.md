@@ -1,6 +1,32 @@
-# Fusion Setting — Syntax Highlighting for VS Code-Compatible Editors
+# Fusion Setting Highlighter
 
 A local extension for VS Code and compatible forked editors that adds syntax highlighting for **DaVinci Resolve Fusion `.setting` files**, with full embedded Lua support inside script blocks.
+
+## Installation (local, no marketplace required)
+
+Clone or copy this folder into your editor's local extensions directory:
+
+<details open>
+<summary>macOS / Linux</summary>
+
+- **VS Code:** `~/.vscode/extensions/fusion-setting/`
+- **Cursor:** `~/.cursor/extensions/fusion-setting/`
+- **Windsurf:** `~/.windsurf/extensions/fusion-setting/`
+- **Antigravity:** `~/.antigravity/extensions/fusion-setting/`
+
+</details>
+
+<details>
+<summary>Windows</summary>
+
+- **VS Code:** `%USERPROFILE%\.vscode\extensions\fusion-setting\`
+- **Cursor:** `%USERPROFILE%\.cursor\extensions\fusion-setting\`
+- **Windsurf:** `%USERPROFILE%\.windsurf\extensions\fusion-setting\`
+- **Antigravity:** `%APPDATA%\Antigravity\extensions\fusion-setting\`
+
+</details>
+
+Restart the editor. Any `.setting` file will automatically use the "Fusion Setting" language mode.
 
 ## What is a `.setting` file?
 
@@ -94,14 +120,3 @@ When the tokenizer encounters `[[`, it switches into `source.lua` scope and dele
 ### `language-configuration.json`
 
 Configures editor behaviour: `--` as the line comment token, and bracket pairs for `{}`, `[]`, `()`, and `""`.
-
-## Installation (local, no marketplace required)
-
-Clone or copy this folder into your editor's local extensions directory:
-
-- **VS Code:** `~/.vscode/extensions/fusion-setting/`
-- **Cursor:** `~/.cursor/extensions/fusion-setting/`
-- **Windsurf:** `~/.windsurf/extensions/fusion-setting/`
-- **Antigravity:** `~/.antigravity/extensions/fusion-setting/`
-
-Restart the editor. Any `.setting` file will automatically use the "Fusion Setting" language mode.
