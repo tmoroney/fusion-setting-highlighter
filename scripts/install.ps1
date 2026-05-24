@@ -32,6 +32,7 @@ $Ref = if ($env:FUSION_SETTING_REF) {
 }
 
 $ExtensionDirName = "fusion-setting-highlighter"
+$LegacyExtensionDirName = "fusion-setting"
 
 if (@("vscode", "cursor", "windsurf", "antigravity") -notcontains $Editor) {
     throw "Unknown editor: $Editor. Use vscode, cursor, windsurf, or antigravity."
@@ -42,6 +43,13 @@ $InstallDir = switch ($Editor) {
     "cursor" { Join-Path $env:USERPROFILE ".cursor\extensions\$ExtensionDirName" }
     "windsurf" { Join-Path $env:USERPROFILE ".windsurf\extensions\$ExtensionDirName" }
     "antigravity" { Join-Path $env:APPDATA "Antigravity\extensions\$ExtensionDirName" }
+}
+
+$LegacyInstallDir = switch ($Editor) {
+    "vscode" { Join-Path $env:USERPROFILE ".vscode\extensions\$LegacyExtensionDirName" }
+    "cursor" { Join-Path $env:USERPROFILE ".cursor\extensions\$LegacyExtensionDirName" }
+    "windsurf" { Join-Path $env:USERPROFILE ".windsurf\extensions\$LegacyExtensionDirName" }
+    "antigravity" { Join-Path $env:APPDATA "Antigravity\extensions\$LegacyExtensionDirName" }
 }
 
 $TempDir = Join-Path ([System.IO.Path]::GetTempPath()) ("fusion-setting-" + [System.Guid]::NewGuid())
@@ -66,6 +74,11 @@ try {
         Remove-Item -Path $SyntaxesDir -Recurse -Force
     }
     Copy-Item -Path (Join-Path $SourceDir.FullName "syntaxes") -Destination $SyntaxesDir -Recurse -Force
+
+    if (Test-Path $LegacyInstallDir) {
+        Remove-Item -Path $LegacyInstallDir -Recurse -Force
+        Write-Host "Removed legacy install at $LegacyInstallDir"
+    }
 
     Write-Host "Installed Fusion Setting Highlighter to $InstallDir"
     Write-Host "Restart your editor, then open a .setting file."

@@ -4,6 +4,7 @@ set -eu
 REPO_URL="${FUSION_SETTING_REPO_URL:-https://github.com/tmoroney/fusion-setting-highlighter}"
 REF="${FUSION_SETTING_REF:-master}"
 EXTENSION_DIR_NAME="fusion-setting-highlighter"
+LEGACY_EXTENSION_DIR_NAME="fusion-setting"
 
 prompt_for_editor() {
   echo "Choose an editor:"
@@ -35,15 +36,19 @@ fi
 case "$editor" in
   vscode)
     install_dir="$HOME/.vscode/extensions/$EXTENSION_DIR_NAME"
+    legacy_install_dir="$HOME/.vscode/extensions/$LEGACY_EXTENSION_DIR_NAME"
     ;;
   cursor)
     install_dir="$HOME/.cursor/extensions/$EXTENSION_DIR_NAME"
+    legacy_install_dir="$HOME/.cursor/extensions/$LEGACY_EXTENSION_DIR_NAME"
     ;;
   windsurf)
     install_dir="$HOME/.windsurf/extensions/$EXTENSION_DIR_NAME"
+    legacy_install_dir="$HOME/.windsurf/extensions/$LEGACY_EXTENSION_DIR_NAME"
     ;;
   antigravity)
     install_dir="$HOME/.antigravity/extensions/$EXTENSION_DIR_NAME"
+    legacy_install_dir="$HOME/.antigravity/extensions/$LEGACY_EXTENSION_DIR_NAME"
     ;;
   *)
     echo "Unknown editor: $editor" >&2
@@ -70,6 +75,11 @@ cp "$source_dir/package.json" "$install_dir/package.json"
 cp "$source_dir/language-configuration.json" "$install_dir/language-configuration.json"
 rm -rf "$install_dir/syntaxes"
 cp -R "$source_dir/syntaxes" "$install_dir/syntaxes"
+
+if [ -d "$legacy_install_dir" ]; then
+  rm -rf "$legacy_install_dir"
+  echo "Removed legacy install at $legacy_install_dir"
+fi
 
 echo "Installed Fusion Setting Highlighter to $install_dir"
 echo "Restart your editor, then open a .setting file."
