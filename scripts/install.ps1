@@ -3,7 +3,20 @@ $ErrorActionPreference = "Stop"
 $Editor = if ($env:FUSION_SETTING_EDITOR) {
     $env:FUSION_SETTING_EDITOR
 } else {
-    "vscode"
+    Write-Host "Choose an editor:"
+    Write-Host "  1) VS Code"
+    Write-Host "  2) Cursor"
+    Write-Host "  3) Windsurf"
+    Write-Host "  4) Antigravity"
+    $Choice = Read-Host "Enter a number [1-4]"
+
+    switch ($Choice) {
+        "1" { "vscode" }
+        "2" { "cursor" }
+        "3" { "windsurf" }
+        "4" { "antigravity" }
+        default { throw "Invalid choice: $Choice" }
+    }
 }
 
 $RepoUrl = if ($env:FUSION_SETTING_REPO_URL) {

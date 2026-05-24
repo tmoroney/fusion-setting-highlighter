@@ -5,7 +5,32 @@ REPO_URL="${FUSION_SETTING_REPO_URL:-https://github.com/tmoroney/fusion-setting-
 REF="${FUSION_SETTING_REF:-main}"
 EXTENSION_DIR_NAME="fusion-setting"
 
-editor="${1:-vscode}"
+prompt_for_editor() {
+  echo "Choose an editor:"
+  echo "  1) VS Code"
+  echo "  2) Cursor"
+  echo "  3) Windsurf"
+  echo "  4) Antigravity"
+  printf "Enter a number [1-4]: "
+  IFS= read -r choice </dev/tty
+
+  case "$choice" in
+    1) editor="vscode" ;;
+    2) editor="cursor" ;;
+    3) editor="windsurf" ;;
+    4) editor="antigravity" ;;
+    *)
+      echo "Invalid choice: $choice" >&2
+      exit 1
+      ;;
+  esac
+}
+
+editor="${1:-${FUSION_SETTING_EDITOR:-}}"
+
+if [ -z "$editor" ]; then
+  prompt_for_editor
+fi
 
 case "$editor" in
   vscode)
