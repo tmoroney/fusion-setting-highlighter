@@ -1,0 +1,33 @@
+{
+  "name": "fusion-setting",
+  "displayName": "Fusion Setting",
+  "description": "Syntax highlighting for DaVinci Resolve Fusion .setting files with embedded Lua support",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "fusion-setting",
+        "aliases": ["Fusion Setting", "fusion-setting"],
+        "extensions": [".setting"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fusion-setting",
+        "scopeName": "source.fusion-setting",
+        "path": "./syntaxes/fusion-setting.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.lua": "lua"
+        }
+      }
+    ]
+  }
+}

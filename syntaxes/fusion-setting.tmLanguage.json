@@ -1,0 +1,88 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Fusion Setting",
+  "scopeName": "source.fusion-setting",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#embedded-lua" },
+    { "include": "#string" },
+    { "include": "#fusion-constructors" },
+    { "include": "#ordered-function" },
+    { "include": "#fusion-metadata-keys" },
+    { "include": "#boolean-nil" },
+    { "include": "#numeric-table-key" },
+    { "include": "#number" },
+    { "include": "#identifier-key" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.line.double-dash.fusion-setting",
+      "match": "--.*$"
+    },
+    "embedded-lua": {
+      "name": "meta.embedded.block.lua",
+      "begin": "\\[\\[",
+      "end": "\\]\\]",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.fusion-setting" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.fusion-setting" }
+      },
+      "contentName": "source.lua",
+      "patterns": [
+        { "include": "source.lua" }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.fusion-setting",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.fusion-setting" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.fusion-setting" }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.fusion-setting",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "fusion-constructors": {
+      "name": "storage.type.fusion-setting",
+      "match": "\\b(MacroOperator|TextPlus|Input|InstanceInput|InstanceOutput|GroupInfo|OperatorInfo|ControlPage|BezierSpline|StyledTextFollower|KeyStretcherMod|MaskOutline|RectMask|Modifier|Transform|Merge|Background|ColorCorrector|Blur|Crop|Text\\+?)\\b(?=\\s*\\{)"
+    },
+    "ordered-function": {
+      "name": "support.function.fusion-setting",
+      "match": "\\bordered\\b"
+    },
+    "fusion-metadata-keys": {
+      "name": "support.other.variable.fusion-setting",
+      "match": "\\b(INP|INPID|INPS|LINKID|LINKS|CLRC|CBC|TEC|LBLC|IC|ICS|ICD|BTNCS|CT|PBDID|TOOLS|REGS|REG|TOOLB|TOOLS|TOOL|XF|MF|OBJP|PDP|PBDID|CS|SS|WS|TS|BS|TC|PC|SC|MC|OC|RC|DC|FC|EC|HC|GC|AC|CC|NC|VC|ZC|KC|QC|UC|XC|YC)_\\w+\\b"
+    },
+    "boolean-nil": {
+      "name": "constant.language.fusion-setting",
+      "match": "\\b(true|false|nil)\\b"
+    },
+    "numeric-table-key": {
+      "name": "constant.numeric.fusion-setting",
+      "match": "\\[\\d+\\]"
+    },
+    "number": {
+      "name": "constant.numeric.fusion-setting",
+      "match": "-?\\d+(\\.\\d+)?([eE][+-]?\\d+)?"
+    },
+    "identifier-key": {
+      "name": "variable.other.property.fusion-setting",
+      "match": "\\b[A-Za-z_]\\w*\\b(?=\\s*=)"
+    },
+    "punctuation": {
+      "name": "punctuation.definition.fusion-setting",
+      "match": "[{}\\[\\]().,=]"
+    }
+  }
+}
